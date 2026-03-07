@@ -4,14 +4,21 @@ namespace RapidPack.Models
 {
     public class ParcelCalculator
     {
-        private const double MaxWeight = 30.0;
+        public const double MaxWeight = 30.0;
 
-        public void ValidateWeight(double weight)
+        public decimal Calculate(double weight, string type)
         {
             if (weight > MaxWeight)
             {
-                throw new ArgumentException($"Paczka jest za ciężka ({weight} kg). Maksimum to {MaxWeight} kg!");
+                throw new ArgumentException($"Paczka jest za ciężka! Max: {MaxWeight} kg.");
             }
+
+            if (type == "Paleta")
+            {
+                return 100m; 
+            }
+
+            return 10m + ((decimal)weight * 2m);
         }
     }
 }
