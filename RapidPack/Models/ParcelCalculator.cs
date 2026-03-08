@@ -10,7 +10,7 @@ namespace RapidPack.Models
         {
             if (weight > MaxWeight)
             {
-                throw new ArgumentException($"Paczka jest za ciężka! Max: {MaxWeight} kg.");
+                throw new ArgumentException($"BŁĄD: Paczka zbyt ciężka ({weight} kg). Max: {MaxWeight} kg.");
             }
 
             decimal price;
@@ -22,6 +22,11 @@ namespace RapidPack.Models
             else
             {
                 price = 10m + ((decimal)weight * 2m);
+                
+                if (type == "Ostrożnie")
+                {
+                    price += 10m;
+                }
             }
 
             if ((h + w + d) > 150)
@@ -31,7 +36,7 @@ namespace RapidPack.Models
 
             if (isExpress)
             {
-                price += 25m;
+                price += 15m;
             }
 
             return price;
