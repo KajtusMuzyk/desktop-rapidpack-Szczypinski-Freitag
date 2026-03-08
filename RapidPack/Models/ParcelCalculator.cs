@@ -4,13 +4,11 @@ namespace RapidPack.Models
 {
     public class ParcelCalculator
     {
-        public const double MaxWeight = 30.0;
-
-        public decimal Calculate(double weight, string type, double h, double w, double d, bool isExpress)
+        public decimal Calculate(double weight, string type, int h, int w, int d, bool isExpress)
         {
-            if (weight > MaxWeight)
+            if (weight > 30)
             {
-                throw new ArgumentException($"BŁĄD: Paczka zbyt ciężka ({weight} kg). Max: {MaxWeight} kg.");
+                throw new ArgumentException("Weight cannot exceed 30kg.");
             }
 
             decimal price;
@@ -22,16 +20,16 @@ namespace RapidPack.Models
             else
             {
                 price = 10m + ((decimal)weight * 2m);
-                
+
                 if (type == "Ostrożnie")
                 {
                     price += 10m;
                 }
-            }
 
-            if ((h + w + d) > 150)
-            {
-                price *= 1.5m;
+                if ((h + w + d) > 150)
+                {
+                    price *= 1.5m;
+                }
             }
 
             if (isExpress)
