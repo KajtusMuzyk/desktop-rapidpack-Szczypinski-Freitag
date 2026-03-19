@@ -5,7 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="900"
         x:Class="RapidPack.MainWindow"
         Title="RapidPack"
-        Background="#E0E0E0"> <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        Background="#E0E0E0">
+     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
         
         <StackPanel Spacing="10">
             
@@ -32,7 +33,8 @@
                     BorderBrush="Azure" 
                     BorderThickness="4" 
                     CornerRadius="30"
-                    BoxShadow="0 10 20 0 #30000000"> <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto" Margin="40">
+                    BoxShadow="0 10 20 0 #30000000">
+                 <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto" Margin="40">
                     
                     <TextBlock Grid.Row="0" 
                                Text="KALKULATOR CENY" 
@@ -52,6 +54,7 @@
                         <TextBlock Text="Typ przesyłki" FontWeight="Medium" Margin="0,0,0,5"/>
                         <ComboBox x:Name="TypeInput" HorizontalAlignment="Stretch" SelectedIndex="0" Background="White">
                             <ComboBoxItem Content="Standardowa"/>
+                            <ComboBoxItem Content="Ostrożnie (szkło)"/>
                             <ComboBoxItem Content="Paleta"/>
                         </ComboBox>
                     </StackPanel>
@@ -70,7 +73,9 @@
                             <TextBox x:Name="DepthInput" Text="0" Background="White"/>
                         </StackPanel>
                     </Grid>
-
+                    
+                    <CheckBox Grid.Row="4" x:Name="ExpressInput" Content="Przesyłka Express (+15 zł)" Margin="0,10"/>
+                    
                 </Grid>
             </Border>
         </StackPanel>
