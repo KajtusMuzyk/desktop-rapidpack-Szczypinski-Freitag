@@ -2,66 +2,77 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="900"
         x:Class="RapidPack.MainWindow"
         Title="RapidPack"
-        Background="Gainsboro">
-
-    <Grid RowDefinitions="Auto, *">
+        Background="#E0E0E0"> <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
         
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,20">
-            <Border VerticalAlignment="Top" HorizontalAlignment="Left" 
-                    Width="160" Height="160" 
-                    Background="NavajoWhite" BorderBrush="Azure" BorderThickness="4" 
-                    CornerRadius="0 0 20 0" Margin="0">
-                <Image Source="Assets/ikona.png"/>
-            </Border>
+        <StackPanel Spacing="10">
             
-            <Border VerticalAlignment="Top" HorizontalAlignment="Left" 
-                    Width="300" Height="70" 
-                    Margin="0 0 225 0" Background="NavajoWhite" BorderBrush="Azure" BorderThickness="4" 
-                    CornerRadius="20">
-                <TextBlock TextAlignment="Center" FontSize="50" FontStyle="Oblique" Foreground="Black">RapidPack</TextBlock>
-            </Border>
-        </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                <Border Width="90" Height="90" 
+                        Background="NavajoWhite" 
+                        BorderBrush="Azure" 
+                        BorderThickness="3" 
+                        CornerRadius="15"
+                        BoxShadow="0 4 10 0 #40000000"> <Image Source="Assets/ikona.png" Margin="5"/>
+                </Border>
+                
+                <TextBlock Text="RapidPack"
+                           FontSize="40"
+                           FontWeight="Black"
+                           FontStyle="Oblique"
+                           Foreground="#2C3E50"
+                           VerticalAlignment="Center"
+                           Margin="20,0,0,0"/>
+            </StackPanel>
 
-        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            
-            <Border Width="600" Height="700" 
-                    Background="NavajoWhite" BorderBrush="Azure" BorderThickness="4" 
-                    CornerRadius="20">
-                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, *" Margin="30">
-                    <TextBlock Grid.Row="0" Text="Parametry Przesyłki" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+            <Border Width="600" 
+                    Background="NavajoWhite" 
+                    BorderBrush="Azure" 
+                    BorderThickness="4" 
+                    CornerRadius="30"
+                    BoxShadow="0 10 20 0 #30000000"> <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto" Margin="40">
+                    
+                    <TextBlock Grid.Row="0" 
+                               Text="KALKULATOR CENY" 
+                               FontSize="20" 
+                               FontWeight="SemiBold" 
+                               LetterSpacing="2"
+                               Margin="0,0,0,30" 
+                               HorizontalAlignment="Center" 
+                               Foreground="#5D4037"/>
 
-                    <StackPanel Grid.Row="1" Margin="0,5">
-                        <TextBlock Text="Waga (kg):" Margin="0,5"/>
-                        <NumericUpDown x:Name="WeightInput" Minimum="0" Maximum="100" Increment="0.5" Value="1"/>
+                    <StackPanel Grid.Row="1" Margin="0,10">
+                        <TextBlock Text="Waga (kg)" FontWeight="Medium" Margin="0,0,0,5"/>
+                        <NumericUpDown x:Name="WeightInput" Minimum="0" Maximum="100" Increment="1" Value="0" Background="White"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="2" Margin="0,5">
-                        <TextBlock Text="Typ przesyłki:" Margin="0,5"/>
-                        <ComboBox x:Name="TypeInput" HorizontalAlignment="Stretch" SelectedIndex="0">
+                    <StackPanel Grid.Row="2" Margin="0,10">
+                        <TextBlock Text="Typ przesyłki" FontWeight="Medium" Margin="0,0,0,5"/>
+                        <ComboBox x:Name="TypeInput" HorizontalAlignment="Stretch" SelectedIndex="0" Background="White">
                             <ComboBoxItem Content="Standardowa"/>
                             <ComboBoxItem Content="Paleta"/>
                         </ComboBox>
                     </StackPanel>
 
-                    <Grid Grid.Row="3" ColumnDefinitions="*, *, *" Margin="0,15">
-                        <StackPanel Grid.Column="0" Margin="0,0,5,0">
-                            <TextBlock Text="Wysokość (cm):"/>
-                            <TextBox x:Name="HeightInput" Text="10"/>
+                    <Grid Grid.Row="3" ColumnDefinitions="*, *, *" Margin="0,20">
+                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                            <TextBlock Text="Wysokość (cm)" FontSize="12" Margin="0,0,0,5"/>
+                            <TextBox x:Name="HeightInput" Text="0" Background="White"/>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Margin="5,0,5,0">
-                            <TextBlock Text="Szerokość (cm):"/>
-                            <TextBox x:Name="WidthInput" Text="10"/>
+                            <TextBlock Text="Szerokość (cm)" FontSize="12" Margin="0,0,0,5"/>
+                            <TextBox x:Name="WidthInput" Text="0" Background="White"/>
                         </StackPanel>
-                        <StackPanel Grid.Column="2" Margin="5,0,0,0">
-                            <TextBlock Text="Głębokość (cm):"/>
-                            <TextBox x:Name="DepthInput" Text="10"/>
+                        <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                            <TextBlock Text="Głębokość (cm)" FontSize="12" Margin="0,0,0,5"/>
+                            <TextBox x:Name="DepthInput" Text="0" Background="White"/>
                         </StackPanel>
                     </Grid>
+
                 </Grid>
             </Border>
-        </Grid>
+        </StackPanel>
     </Grid>
 </Window>
