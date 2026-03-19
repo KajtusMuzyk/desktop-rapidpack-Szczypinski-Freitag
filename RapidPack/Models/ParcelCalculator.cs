@@ -8,7 +8,7 @@ namespace RapidPack.Models
         {
             if (weight > 30)
             {
-                throw new ArgumentException($"Paczka jest zbyt ciężka! Maksymalna waga to 30kg, a twoja paczka waży {weight}kg");
+                throw new ArgumentException($"Paczka jest zbyt ciężka!");
             }
 
             decimal price;
